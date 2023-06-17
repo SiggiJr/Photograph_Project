@@ -69,21 +69,19 @@ main {
   row-gap: 20px;
 }
 
-.picture_container .absolute_container {
-  padding: 16px 0;
-  display: none;
-  font-family: "Roboto_Regular";
-  font-size: 19px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .flex_container img {
   object-fit: cover;
   width: 100%;
   display: block;
+  filter: grayscale(0%);
+  transition: filter 2s;
+}
+
+.text_phone {
+  display: none;
+  padding: 16px 0;
+  font-family: "Roboto_Regular";
+  font-size: 19px;
 }
 
 /* # === FOOTER === */
@@ -162,15 +160,30 @@ footer {
 /* # === HOVER-EFFECT === */
 
 /* ! Transition einbauen */
+.absolute_container {
+  width: 100%;
+  opacity: 0%;
+  font-family: "Roboto_Regular";
+  font-size: 19px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  transform: translate(-50%, -50%);
+  transition: opacity 2s;
+}
+
+.absolute_container p {
+  text-align: center;
+}
 
 .picture_container {
   position: relative;
+  /* display: inline-block; */
 }
 
 .picture_container:hover .absolute_container {
-  display: block;
-  /* top: 50%;
-  left: 50%; */
+  opacity: 100%;
   color: #fff;
 }
 
@@ -196,6 +209,14 @@ footer {
     row-gap: 20px;
   }
 
+  .absolute_container {
+    display: none;
+  }
+
+  .text_phone {
+    display: block;
+  }
+
   .footer_grid_container {
     grid-template-columns: 1fr;
     row-gap: 22px;
@@ -216,12 +237,6 @@ footer {
 
   .header {
     width: 100%;
-  }
-
-  .picture_container .absolute_container {
-    position: static;
-    transform: none;
-    display: block;
   }
 
   .footer_grid_container {
