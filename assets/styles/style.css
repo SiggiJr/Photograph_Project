@@ -222,10 +222,11 @@ footer {
     row-gap: 22px;
     padding-left: 80px;
   }
-}
 
-.formular {
-  width: 660px;
+  .formular {
+    width: 100%;
+    padding: 0 80px;
+  }
 }
 
 @media screen and (max-width: 414px) {
@@ -252,6 +253,7 @@ footer {
   }
 
   .formular {
-    width: 384px;
+    padding: 0 15px;
+    width: 100%;
   }
 }
